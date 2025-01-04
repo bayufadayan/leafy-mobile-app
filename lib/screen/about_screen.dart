@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iot_app/components/build_team_member.dart';
+import 'package:iot_app/components/build_components_card.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -25,31 +25,31 @@ class AboutScreen extends StatelessWidget {
             mainAxisSpacing: 10.0,
           ),
           children: [
-            buildTeamMember(
+            buildComponent(
               title: 'M. Bayu Fadayan',
               desc: '065121100',
               image: 'images/profiles/bay.jpg',
               showDesc: true,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Fathur P. Shodikin',
               desc: '065121103',
               image: 'images/profiles/tur.jpeg',
               showDesc: true,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Rafly R. Amtiar',
               desc: '065121107',
               image: 'images/profiles/pli.jpeg',
               showDesc: true,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Apriyan Fillah G',
               desc: '065121109',
-              image: 'images/person.png',
+              image: 'images/profiles/yan.jpeg',
               showDesc: true,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Zidan Al Rasyid',
               desc: '065121112',
               image: 'images/person.png',

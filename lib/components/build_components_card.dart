@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget buildTeamMember({
+Widget buildComponent({
   required String title,
   required String desc,
   required String image,
@@ -49,16 +49,17 @@ Widget buildTeamMember({
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Center(
             child: Column(
-              mainAxisAlignment: showDesc ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end,
+              mainAxisAlignment: showDesc
+                  ? MainAxisAlignment.spaceBetween
+                  : MainAxisAlignment.end,
               children: [
                 if (showDesc)
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12.0, vertical: 2.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0, vertical: 2.0),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(1),
-                      borderRadius:
-                          BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Text(
                       "($desc)",

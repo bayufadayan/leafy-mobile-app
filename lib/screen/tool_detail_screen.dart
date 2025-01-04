@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iot_app/components/build_team_member.dart';
+import 'package:iot_app/components/build_components_card.dart';
 
 class ToolDeatilScreen extends StatelessWidget {
   const ToolDeatilScreen({super.key});
@@ -25,73 +25,73 @@ class ToolDeatilScreen extends StatelessWidget {
             mainAxisSpacing: 10.0,
           ),
           children: [
-            buildTeamMember(
+            buildComponent(
               title: 'NodeMCU ESP8266',
               desc: 'xxxx',
               image: 'images/materials/esp8266.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Relay',
               desc: 'xxxx',
               image: 'images/materials/relay.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Mini DC Water Pump',
               desc: 'xxxx',
               image: 'images/materials/pump.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Soil Moisture Sensor',
               desc: 'xxxx',
               image: 'images/materials/soil.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'LCD 16x2 I2C',
               desc: 'xxxx',
               image: 'images/materials/lcd.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
-              title: 'DHT22',
+            buildComponent(
+              title: 'DHT11',
               desc: 'xxxx',
-              image: 'images/materials/dht22.jpeg',
+              image: 'images/materials/dht11.jpg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Breadboard',
               desc: 'xxxx',
               image: 'images/materials/breadboard.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Kabel Jumper',
               desc: 'xxxx',
               image: 'images/materials/jumper.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Baterai',
               desc: 'xxxx',
               image: 'images/materials/batre.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Arduino IDE',
               desc: 'xxxx',
               image: 'images/materials/arduino.jpeg',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Flutter',
               desc: 'xxxx',
               image: 'images/materials/flutter2.png',
               showDesc: false,
             ),
-            buildTeamMember(
+            buildComponent(
               title: 'Firebase',
               desc: 'xxxx',
               image: 'images/materials/firebase.jpeg',
