@@ -41,51 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD0l38qPbt1hKArNnIaDNqC3ZWrnP4p1vg',
-    appId: '1:32443741838:web:b90f352d61f9b5374bbbdf',
-    messagingSenderId: '32443741838',
-    projectId: 'iot-app-leafy-1',
-    authDomain: 'iot-app-leafy-1.firebaseapp.com',
-    databaseURL: 'https://iot-app-leafy-1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'iot-app-leafy-1.firebasestorage.app',
+    apiKey: 'AIzaSyApJOizxlJ4dECSVlaFtRe3A-994fUacUg',
+    appId: '1:1011445771363:web:be4fd12939b827328d1c56',
+    messagingSenderId: '1011445771363',
+    projectId: 'leafy-e18ac',
+    authDomain: 'leafy-e18ac.firebaseapp.com',
+    storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCRz-YYXBabicoXjdxCfHETiezwNGnmYsQ',
-    appId: '1:32443741838:android:034e792b5c854ab84bbbdf',
-    messagingSenderId: '32443741838',
-    projectId: 'iot-app-leafy-1',
-    databaseURL: 'https://iot-app-leafy-1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'iot-app-leafy-1.firebasestorage.app',
+    apiKey: 'AIzaSyBiVQ4T5YEN9cmJHupu11m8Hb_lJD6rp1s',
+    appId: '1:1011445771363:android:1a95f15d13794a2f8d1c56',
+    messagingSenderId: '1011445771363',
+    projectId: 'leafy-e18ac',
+    storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAOh_xDkyC1L2k9j-g2mhNplKC01A97a8Q',
-    appId: '1:32443741838:ios:8d05625132ad52484bbbdf',
-    messagingSenderId: '32443741838',
-    projectId: 'iot-app-leafy-1',
-    databaseURL: 'https://iot-app-leafy-1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'iot-app-leafy-1.firebasestorage.app',
+    apiKey: 'AIzaSyCGoBRg6-yyeCnUiZxuu1ySkOtfwWixqpg',
+    appId: '1:1011445771363:ios:258671b7fcc0ede88d1c56',
+    messagingSenderId: '1011445771363',
+    projectId: 'leafy-e18ac',
+    storageBucket: 'leafy-e18ac.firebasestorage.app',
     iosBundleId: 'com.example.iotApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAOh_xDkyC1L2k9j-g2mhNplKC01A97a8Q',
-    appId: '1:32443741838:ios:8d05625132ad52484bbbdf',
-    messagingSenderId: '32443741838',
-    projectId: 'iot-app-leafy-1',
-    databaseURL: 'https://iot-app-leafy-1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'iot-app-leafy-1.firebasestorage.app',
+    apiKey: 'AIzaSyCGoBRg6-yyeCnUiZxuu1ySkOtfwWixqpg',
+    appId: '1:1011445771363:ios:258671b7fcc0ede88d1c56',
+    messagingSenderId: '1011445771363',
+    projectId: 'leafy-e18ac',
+    storageBucket: 'leafy-e18ac.firebasestorage.app',
     iosBundleId: 'com.example.iotApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD0l38qPbt1hKArNnIaDNqC3ZWrnP4p1vg',
-    appId: '1:32443741838:web:acb3ae113e2bc41c4bbbdf',
-    messagingSenderId: '32443741838',
-    projectId: 'iot-app-leafy-1',
-    authDomain: 'iot-app-leafy-1.firebaseapp.com',
-    databaseURL: 'https://iot-app-leafy-1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'iot-app-leafy-1.firebasestorage.app',
+    apiKey: 'AIzaSyApJOizxlJ4dECSVlaFtRe3A-994fUacUg',
+    appId: '1:1011445771363:web:2dd06d6e80bbefac8d1c56',
+    messagingSenderId: '1011445771363',
+    projectId: 'leafy-e18ac',
+    authDomain: 'leafy-e18ac.firebaseapp.com',
+    storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
+
 }
