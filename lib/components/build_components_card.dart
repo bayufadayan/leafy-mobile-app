@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../utils/google_fonts_compat.dart';
 
 Widget buildComponent({
   required String title,
@@ -58,7 +58,7 @@ Widget buildComponent({
                     padding: const EdgeInsets.symmetric(
                         horizontal: 12.0, vertical: 2.0),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(1),
+                      color: Colors.black.withValues(alpha: 1),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Text(

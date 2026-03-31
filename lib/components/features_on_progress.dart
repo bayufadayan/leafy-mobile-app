@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import '../utils/google_fonts_compat.dart';
 
 class FeaturesOnProgress extends StatelessWidget {
   const FeaturesOnProgress({super.key});

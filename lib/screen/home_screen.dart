@@ -11,9 +11,9 @@ import 'package:iot_app/components/features_on_progress.dart';
 import 'package:iot_app/components/stats_card.dart';
 import 'package:iot_app/screen/notification_screen.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:lottie/lottie.dart';
+import '../utils/google_fonts_compat.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         (pumpStatus
                             ? Transform(
                                 alignment: Alignment.center,
-                                transform: Matrix4.identity()..scale(-1.0, 1.0),
+                                transform: Matrix4.identity()..scaleByDouble(-1.0, 1.0, 1.0, 1.0),
                                 child: Lottie.asset(
                                   'images/lottie/watering_can.json',
                                   width: 24,
@@ -440,7 +440,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 boxShadow: pumpStatus
                                     ? [
                                         BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
+                                          color: Colors.black.withValues(alpha: 0.2),
                                           offset: const Offset(0, 2),
                                           blurRadius: 4.0,
                                         ),
@@ -499,7 +499,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha: 0.1),
                         blurRadius: 15,
                         offset: const Offset(0, -5),
                       ),
