@@ -43,12 +43,12 @@ Leafy IoT Plant Watering System adalah solusi pintar untuk menyiram tanaman seca
 Berikut adalah beberapa tampilan dari aplikasi ini:
 
 <div align="center">
-  <img src="images/screenshots/1.jpeg" alt="Screenshot 1" width="150" style="margin: 5px;"/>
-  <img src="images/screenshots/2.jpeg" alt="Screenshot 2" width="150" style="margin: 5px;"/>
-  <img src="images/screenshots/3.jpeg" alt="Screenshot 3" width="150" style="margin: 5px;"/>
-  <img src="images/screenshots/4.jpeg" alt="Screenshot 4" width="150" style="margin: 5px;"/>
-  <img src="images/screenshots/5.jpeg" alt="Screenshot 5" width="150" style="margin: 5px;"/>
-  <img src="images/screenshots/6.jpeg" alt="Screenshot 6" width="150" style="margin: 5px;"/>
+  <img src="images/screenshots/1.jpeg" alt="Screenshot 1" width="200" style="margin: 5px;"/>
+  <img src="images/screenshots/2.jpeg" alt="Screenshot 2" width="200" style="margin: 5px;"/>
+  <img src="images/screenshots/3.jpeg" alt="Screenshot 3" width="200" style="margin: 5px;"/>
+  <img src="images/screenshots/4.jpeg" alt="Screenshot 4" width="200" style="margin: 5px;"/>
+  <img src="images/screenshots/5.jpeg" alt="Screenshot 5" width="200" style="margin: 5px;"/>
+  <img src="images/screenshots/6.jpeg" alt="Screenshot 6" width="200" style="margin: 5px;"/>
 </div>
 
 ## Kontribusi
