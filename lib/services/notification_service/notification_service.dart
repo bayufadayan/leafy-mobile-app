@@ -19,7 +19,7 @@ class NotificationService {
   static bool isFlutterLocalNotificationsInitialized = false;
   final FirebaseDatabase _database = FirebaseDatabase.instance;
 
-  initNotifications() async {
+  Future<void> initNotifications() async {
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
     FirebaseMessaging.onMessage.listen(showFlutterNotification);
     if (!kIsWeb) {
@@ -30,12 +30,18 @@ class NotificationService {
   }
 
   Future<String?> getToken() async {
-    String? token = await FirebaseMessaging.instance.getToken(
-        vapidKey:
-            'BNKkaUWxyP_yC_lki1kYazgca0TNhuzt2drsOrL6WrgGbqnMnr8ZMLzg_rSPDm6HKphABS0KzjPfSqCXHXEd06Y');
+    try {
+      final token = await FirebaseMessaging.instance.getToken(
+          vapidKey:
+              'BNKkaUWxyP_yC_lki1kYazgca0TNhuzt2drsOrL6WrgGbqnMnr8ZMLzg_rSPDm6HKphABS0KzjPfSqCXHXEd06Y');
 
-    print("FCM Token: $token");
-    return token;
+      print('FCM Token: $token');
+      return token;
+    } catch (e, s) {
+      debugPrint('Failed to get FCM token: $e');
+      debugPrintStack(stackTrace: s);
+      return null;
+    }
   }
 
   Future<void> _saveFcmToken() async {

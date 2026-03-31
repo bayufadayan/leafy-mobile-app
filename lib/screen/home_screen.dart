@@ -36,10 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
   double humidity = 0.0;
   double temperature = 0.0;
   bool isBottomSheetAppear = false;
+  final List<StreamSubscription<DatabaseEvent>> _dbSubscriptions = [];
 
   @override
   void initState() {
     super.initState();
+
+    _diagnoseRealtimeDbConnection();
 
     subscription = Connectivity()
         .onConnectivityChanged
@@ -65,45 +68,94 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
 
-    _databaseReference.child('control/pumpStatus').onValue.listen((event) {
-      setState(() {
-        if (event.snapshot.value != null) {
-          pumpStatus = event.snapshot.value as bool;
-        } else {
-          pumpStatus = false;
-        }
-      });
-    });
+    _dbSubscriptions.add(
+      _databaseReference.child('control/pumpStatus').onValue.listen(
+        (event) {
+          final value = event.snapshot.value;
+          debugPrint('RTDB event [control/pumpStatus] => $value');
+          setState(() {
+            if (value is bool) {
+              pumpStatus = value;
+            } else if (value is num) {
+              pumpStatus = value != 0;
+            } else if (value is String) {
+              final normalized = value.toLowerCase();
+              pumpStatus = normalized == 'true' || value == '1';
+            } else {
+              pumpStatus = false;
+            }
+          });
+        },
+        onError: (error) {
+          debugPrint('RTDB error [control/pumpStatus]: $error');
+        },
+      ),
+    );
 
-    _databaseReference.child('sensor/soilMoisture').onValue.listen((event) {
-      setState(() {
-        if (event.snapshot.value != null) {
-          soilMoisture = int.tryParse(event.snapshot.value.toString()) ?? 0;
-        } else {
-          soilMoisture = 0;
-        }
-      });
-    });
+    _dbSubscriptions.add(
+      _databaseReference.child('sensor/soilMoisture').onValue.listen(
+        (event) {
+          final value = event.snapshot.value;
+          debugPrint('RTDB event [sensor/soilMoisture] => $value');
+          setState(() {
+            soilMoisture = int.tryParse(value.toString()) ?? 0;
+          });
+        },
+        onError: (error) {
+          debugPrint('RTDB error [sensor/soilMoisture]: $error');
+        },
+      ),
+    );
 
-    _databaseReference.child('sensor/humidity').onValue.listen((event) {
-      setState(() {
-        if (event.snapshot.value != null) {
-          humidity = double.tryParse(event.snapshot.value.toString()) ?? 0.0;
-        } else {
-          humidity = 0.0;
-        }
-      });
-    });
+    _dbSubscriptions.add(
+      _databaseReference.child('sensor/humidity').onValue.listen(
+        (event) {
+          final value = event.snapshot.value;
+          debugPrint('RTDB event [sensor/humidity] => $value');
+          setState(() {
+            humidity = double.tryParse(value.toString()) ?? 0.0;
+          });
+        },
+        onError: (error) {
+          debugPrint('RTDB error [sensor/humidity]: $error');
+        },
+      ),
+    );
 
-    _databaseReference.child('sensor/temperature').onValue.listen((event) {
-      setState(() {
-        if (event.snapshot.value != null) {
-          temperature = double.tryParse(event.snapshot.value.toString()) ?? 0.0;
-        } else {
-          temperature = 0.0;
-        }
-      });
-    });
+    _dbSubscriptions.add(
+      _databaseReference.child('sensor/temperature').onValue.listen(
+        (event) {
+          final value = event.snapshot.value;
+          debugPrint('RTDB event [sensor/temperature] => $value');
+          setState(() {
+            temperature = double.tryParse(value.toString()) ?? 0.0;
+          });
+        },
+        onError: (error) {
+          debugPrint('RTDB error [sensor/temperature]: $error');
+        },
+      ),
+    );
+  }
+
+  Future<void> _diagnoseRealtimeDbConnection() async {
+    try {
+      final rootSnapshot = await _databaseReference.get();
+      debugPrint('RTDB root exists: ${rootSnapshot.exists}');
+      debugPrint('RTDB root value: ${rootSnapshot.value}');
+
+      final sensorSnapshot = await _databaseReference.child('sensor').get();
+      debugPrint('RTDB sensor snapshot exists: ${sensorSnapshot.exists}');
+      debugPrint('RTDB sensor snapshot value: ${sensorSnapshot.value}');
+
+      final pumpSnapshot =
+          await _databaseReference.child('control/pumpStatus').get();
+      debugPrint('RTDB pump snapshot exists: ${pumpSnapshot.exists}');
+      debugPrint('RTDB pump snapshot value: ${pumpSnapshot.value}');
+    } catch (e, s) {
+      debugPrint('RTDB initial read failed: $e');
+      debugPrintStack(stackTrace: s);
+    }
   }
 
   void statisticToggle() {
@@ -137,6 +189,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     _draggableController.removeListener(() {});
     subscription?.cancel();
+    for (final dbSubscription in _dbSubscriptions) {
+      dbSubscription.cancel();
+    }
     super.dispose();
   }
 

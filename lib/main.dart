@@ -7,19 +7,24 @@ import 'package:permission_handler/permission_handler.dart';
 import 'firebase_options.dart';
 import 'utils/google_fonts_compat.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  if (await Permission.notification.request().isGranted) {
-    await NotificationService().initNotifications();
-    await NotificationService().getToken();
-  }
-
-
   runApp(const MyApp());
+
+  // Do not block app startup on notification initialization.
+  final notificationPermission = await Permission.notification.request();
+  if (notificationPermission.isGranted) {
+    try {
+      await NotificationService().initNotifications();
+    } catch (e, s) {
+      debugPrint('Notification init failed: $e');
+      debugPrintStack(stackTrace: s);
+    }
+  }
 }
 
 class MyApp extends StatelessWidget {

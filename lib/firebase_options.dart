@@ -46,6 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1011445771363',
     projectId: 'leafy-e18ac',
     authDomain: 'leafy-e18ac.firebaseapp.com',
+    databaseURL: 'https://leafy-e18ac-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
 
@@ -54,6 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:1011445771363:android:1a95f15d13794a2f8d1c56',
     messagingSenderId: '1011445771363',
     projectId: 'leafy-e18ac',
+    databaseURL: 'https://leafy-e18ac-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
 
@@ -62,6 +64,7 @@ class DefaultFirebaseOptions {
     appId: '1:1011445771363:ios:258671b7fcc0ede88d1c56',
     messagingSenderId: '1011445771363',
     projectId: 'leafy-e18ac',
+    databaseURL: 'https://leafy-e18ac-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'leafy-e18ac.firebasestorage.app',
     iosBundleId: 'com.example.iotApp',
   );
@@ -71,6 +74,7 @@ class DefaultFirebaseOptions {
     appId: '1:1011445771363:ios:258671b7fcc0ede88d1c56',
     messagingSenderId: '1011445771363',
     projectId: 'leafy-e18ac',
+    databaseURL: 'https://leafy-e18ac-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'leafy-e18ac.firebasestorage.app',
     iosBundleId: 'com.example.iotApp',
   );
@@ -81,6 +85,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1011445771363',
     projectId: 'leafy-e18ac',
     authDomain: 'leafy-e18ac.firebaseapp.com',
+    databaseURL: 'https://leafy-e18ac-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'leafy-e18ac.firebasestorage.app',
   );
 
